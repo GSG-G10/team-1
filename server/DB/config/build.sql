@@ -11,7 +11,8 @@ CREATE TABLE users(
     email VARCHAR(255) UNIQUE NOT NULL ,
     password VARCHAR(100) NOT NULL,
     description TEXT,
-    img_profile TEXT
+    img_profile TEXT, 
+    background_img TEXT
 );
 
 CREATE TABLE video_user(
