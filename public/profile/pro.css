@@ -1,0 +1,541 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    img{
+        width: 20px;
+    }
+    
+    nav{
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    justify-content: space-evenly;
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.26);
+    }
+    
+    .bowl_search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
+    height:45px;
+    }
+    
+    
+    
+    .content_Search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: 100%;
+    /* background-color: darkturquoise; */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.26);
+    }
+    
+    
+    .input_search{
+    width: calc( 100% - 40px);
+    height: 100%;
+    }
+    
+    
+    .input_search input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    font-size: 18px;
+    }
+    
+    
+    .btn_serch{
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-left: 2px solid rgb(119, 119, 119);
+    }
+    
+    
+    
+    .bowl_voice{
+    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.26);
+    width: 10%;
+    height: 100%;
+    background-color: rgb(197, 197, 197);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    }
+    
+    .bowl_voice:hover{
+    background-color: rgb(216, 214, 214);
+    }
+    
+    .btn_serch svg,
+    .bowl_voice svg{
+    fill: #383838;
+    width: 25px;
+    height: 25px;
+    }
+    
+    
+    .profile_nav{
+        display: flex;
+        width: 150px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo_home svg{
+        width: 40px;
+        cursor: pointer;
+        height:40px;
+    }
+    
+    
+    .avatar_user{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .logout_user button,
+    .avatar_user button{
+        outline: none;
+        border: none;
+    }
+    
+    
+    
+    .avatar_user img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+    
+    
+    .logout_user svg{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+    
+    
+
+    
+    
+    /* ----------------------- */
+
+
+
+.head_profile{
+height: 350px;
+width: 100%;
+}
+
+
+.background{
+    width: 100%;
+    height: 200px;
+}
+
+.background img{
+    width: 100%;
+    height: 100%;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.158);
+object-fit: cover;
+}
+
+
+
+
+
+.info_user{
+    width: 80%;
+    margin: -120px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 250px;
+}
+
+
+.avatar{
+    width: 150px;
+    height: 150px;
+}
+
+.avatar img{
+width:100%;
+height: 100%;
+border-radius: 50%;
+    border: 5px solid rgb(119, 182, 77);
+    object-fit: cover;
+}
+
+
+.username_inf{
+text-align: center;
+}
+
+.full_name{
+    display: block;
+    font-size: 2rem;
+}
+
+
+.username_user{
+    margin-top: 10px;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.description{
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+.user_select{
+    width: 70%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.bowl_select{
+    height: 120px;
+    width: 220px;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease-in-out;
+}
+
+.bowl_select:hover{
+transform: scale(0.96);
+
+}
+
+
+.bowl_select svg{
+    width: 50px;
+    height: 50px;
+}
+
+.bowl_select span{
+margin-top: 15px;
+font-size: 18px;
+}
+
+
+
+hr{
+box-shadow: 0 1px 7px rgba(0, 0, 0, 0.3);
+
+}
+svg{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+main{
+    /* background: cornflowerblue; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+    }
+    
+    
+    .card_video_{
+    min-width: 300px;
+    width: 300px;
+    /* height: 400px; */
+    margin: 15px 5px;
+    max-height: 270px;
+    background-color: rgb(255, 255, 255);
+    }
+    
+    .bacg_img_video {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    /* background-color: sandybrown; */
+    }
+    
+    .bacg_img_video img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    }
+    
+    .title_video{
+    font-size: 14px;
+    /* background-color: chocolate; */
+    padding: 3px;
+    line-height: 27px;
+    min-height: 40px;
+    cursor: pointer;
+    }
+    
+    
+    .title_video span{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    
+    }
+    
+    
+    .info_Chanal_video{
+    /* background-color: seagreen; */
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: space-between;
+    padding: 0 5px;
+    
+    }
+    
+    
+    .img_chanal_video{
+    width:50px ;
+    height:50px ;
+    cursor: pointer;
+    }
+    
+    .img_chanal_video img{
+    width:100% ;
+    height:100% ;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    
+    }
+    
+    
+    
+    
+    .title_chanal_name{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    width:calc( 100% - 120px);
+    height: 100%;
+    justify-content: space-evenly;
+    }
+    
+    .full_name_cahnal{
+    
+    cursor: pointer;
+    }
+    
+    .date_post_video{
+    font-size: 12px;
+    color: rgb(116, 110, 110);
+    }
+
+    
+
+
+
+.form_add_video{
+    height: 400px;
+    width: 600px;
+}
+
+
+.bowl_filed{
+    margin:10px auto;
+    width: 80%;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+
+.bowl_filed.error{
+    box-shadow: 0px 1px 3px 1px rgba(209, 54, 54, 0.911);
+animation: errorFiled 0.5s ease-in-out;
+
+}
+
+@keyframes errorFiled{
+    0%{transform: translateX(10px);}
+    10%{transform: translateX(-10px);}
+    20%{transform: translateX(10px);}
+    30%{transform: translateX(-10px);}
+    40%{transform: translateX(10px);}
+    50%{transform: translateX(-10px);}
+    60%{transform: translateX(10px);}
+    70%{transform: translateX(-10px);}
+    80%{transform: translateX(-10px);}
+    90%{transform: translateX(-10px);}
+    100%{transform: translateX(-10px);}
+
+}
+
+
+.bowl_filed input{
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+    padding-left: 8px;
+    font-size: 20px;
+}
+
+
+.bowl_filed select{
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    padding-left: 8px;
+    font-size: 20px;
+    height: 40px;
+}
+
+
+.bowl_filed textarea{
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    height: 80px;
+    width: 100%;
+    padding-left: 8px;
+    font-size: 20px;
+    overflow: hidden;
+resize: none;
+}
+
+
+.btn_send_video{
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+.btn_send_video button{
+    outline: none;
+    border: none;
+    background-color: rgb(155, 155, 155);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 22px;
+    height: 40px;
+    width: 100%;
+    padding-left: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn_send_video button{
+    background-color: rgb(76, 190, 76);
+}
+
+.btn_send_video button:hover{
+    transform: scale(0.98);
+}
+
+
