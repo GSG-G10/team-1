@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
+const joi = require('joi');
 const loginSchema = require('./schemaLog')
+
 const routerLogin = express.Router()
 
 routerLogin.get('/', (req, res)=>{
@@ -9,8 +11,10 @@ routerLogin.get('/', (req, res)=>{
 
 
 routerLogin.post('/', (req, res)=>{
-    console.log(req.body);
-    res.redirect('/')
+    const {error, value} = loginSchema.validateAsync(req.body)
+                            .then(res => res.redirect('/auth'))
+                            .catch(res.status(400).json('<h2>Robot!</h2>'))
+    
 })
 
 
