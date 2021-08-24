@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const loginSchema = require('./schemaLog')
 const routerLogin = express.Router()
 
 routerLogin.get('/', (req, res)=>{
