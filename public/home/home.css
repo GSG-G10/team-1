@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 20px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  justify-content: space-evenly;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.26);
+}
+
+.bowl_search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  height: 45px;
+}
+
+.content_Search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 100%;
+  /* background-color: darkturquoise; */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.26);
+}
+
+.input_search {
+  width: calc(100% - 40px);
+  height: 100%;
+}
+
+.input_search input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.btn_serch {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-left: 2px solid rgb(119, 119, 119);
+}
+
+.bowl_voice {
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.26);
+  width: 10%;
+  height: 100%;
+  background-color: rgb(197, 197, 197);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.bowl_voice:hover {
+  background-color: rgb(216, 214, 214);
+}
+
+.btn_serch svg,
+.bowl_voice svg {
+  fill: #383838;
+  width: 25px;
+  height: 25px;
+}
+
+.profile_nav {
+  display: flex;
+  width: 150px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo_home svg {
+  width: 40px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.avatar_user {
+  width: 50px;
+  height: 50px;
+}
+
+.logout_user button,
+.avatar_user button {
+  outline: none;
+  border: none;
+}
+
+.avatar_user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.logout_user svg {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.container_home_video {
+  height: 2000px;
+  margin: 20px auto;
+}
+
+.menu_video_home {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* display: none; */
+}
+
+.li_menu_video {
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgba(81, 113, 114, 0.726);
+}
+
+.li_menu_video a {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.body_cards_video {
+  /* background: cornflowerblue; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card_video_ {
+  min-width: 300px;
+  width: 300px;
+  /* height: 400px; */
+  margin: 15px 5px;
+  max-height: 270px;
+  background-color: rgb(255, 255, 255);
+}
+
+.bacg_img_video {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  /* background-color: sandybrown; */
+}
+
+.bacg_img_video img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.title_video {
+  font-size: 14px;
+  /* background-color: chocolate; */
+  padding: 3px;
+  line-height: 27px;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.title_video span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+.info_Chanal_video {
+  /* background-color: seagreen; */
+  display: flex;
+  align-items: center;
+  height: 50px;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.img_chanal_video {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.img_chanal_video img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.title_chanal_name {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 120px);
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.full_name_cahnal {
+  cursor: pointer;
+}
+
+.date_post_video {
+  font-size: 12px;
+  color: rgb(116, 110, 110);
+}
