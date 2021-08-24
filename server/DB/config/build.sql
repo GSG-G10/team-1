@@ -1,16 +1,13 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS video CASCADE;
-DROP TABLE IF EXISTS video_user CASCADE;
-DROP TABLE IF EXISTS review CASCADE;
+DROP TABLE IF EXISTS users, video , video_user , review CASCADE;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     username VARCHAR(20) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL ,
     password VARCHAR(100) NOT NULL,
-    description TEXT,
+    bio TEXT,
     img_profile TEXT, 
     img_background TEXT
 );
