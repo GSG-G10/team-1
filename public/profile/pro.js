@@ -15,8 +15,6 @@ mySaved.addEventListener('click', ()=>{
     removeChild(main)
     sendData('mySaved')
 
-
-
 })
 
 addVideo.addEventListener('click', ()=>{
@@ -25,11 +23,12 @@ addVideo.addEventListener('click', ()=>{
     main.innerHTML = `
     <div class="form_add_video">
         <form action="/add-video" method="POST">
-            <div class="bowl_filed">
+            <div class="bowl_filed filed_title">
                 <input type="text" name="title" class="title" placeholder="title">
             </div>
-            <div class="bowl_filed">
-                <select name="category">
+            <div class="bowl_filed filed_category">
+                <select name="category" class="category">
+                    <option value="" selected disabled>Category</option>
                     <option value="mathematics">Mathematics</option>
                     <option value="business">Business</option>
                     <option value="datascience">Data Science</option>
@@ -39,27 +38,22 @@ addVideo.addEventListener('click', ()=>{
                     <option value="computerscience">Computer Science</option>
                 </select>
             </div>
-            <div class="bowl_filed">
-                <textarea name="description" class="description" placeholder="description"></textarea>
+            <div class="bowl_filed filed_descrption">
+                <textarea name="description_video" class="description_video" placeholder="description"></textarea>
             </div>
-            <div class="bowl_filed">
+            <div class="bowl_filed filed_url_video">
                 <input type="url" name="url_video" class="url_video" placeholder="URL for video">
             </div>
-            <div class="bowl_filed">
+            <div class="bowl_filed filed_url_image">
                 <input type="url" name="url_image" class="url_image" placeholder="URL for image">
             </div>
             <div class="btn_send_video">
-                <button>Publish</button>
+                <button class="btn_add">Publish</button>
             </div>
         </form>
     </div>
 `
-
-})
-
-
 const btn_add = document.querySelector('.btn_add')
-
 
 const isAbsoluteUrl = url => /^[a-z][a-z0-9+.-]*:/.test(url);
 
@@ -118,7 +112,7 @@ btn_add.addEventListener('click', (e)=>{
         }
     }
 
-
+    
 
 
 if( status.title &&  status.category &&  status.descriptionVideo && status.urlVideo && status.urlImage){
@@ -139,6 +133,10 @@ if( status.title &&  status.category &&  status.descriptionVideo && status.urlVi
 }
 
 })
+
+
+})
+
 
 
 
