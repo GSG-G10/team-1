@@ -22,6 +22,7 @@ CREATE TABLE video(
     description TEXT,
     title TEXT NOT NULL,
     img TEXT,
+    tag TEXT[],
     created_at timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
