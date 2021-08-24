@@ -1,35 +1,40 @@
-BEGIN 
+BEGIN;
 
-DROP TABLE IF EXISTS user, video_user, video;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS video CASCADE;
+DROP TABLE IF EXISTS video_user CASCADE;
+DROP TABLE IF EXISTS review CASCADE;
 
-CREATE TABLE user{
+CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     username VARCHAR(20) NOT NULL,
-    email VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(255) UNIQUE NOT NULL ,
     password VARCHAR(100) NOT NULL,
     description TEXT,
-    img_profile TEXT;
-};
+    img_profile TEXT
+);
 
-CREATE TABLE video_user{
-    video_id INT NOT NULL,
-    user_id INT NOT NULL;
-}
+CREATE TABLE video_user(
+    video_id INT REFERENCES users(id),
+    user_id INT REFERENCES video(id)
+);
 
 
-CREATE TABLE video{
+CREATE TABLE video(
     id SERIAL PRIMARY KEY, 
+    create_by INT REFERENCES users(id),
     url TEXT NOT NULL UNIQUE,
     description TEXT,
     title TEXT NOT NULL,
-    img TEXT;
-};
+    img TEXT,
+    created_at timestamp DEFAULT CURRENT_TIMESTAMP
+);
 
 
-CREATE TABLE review{
-    user_id INT NOT NULL,
+CREATE TABLE review(
+    user_id INT REFERENCES users(id),
     video_id INT NOT NULL, 
-    text_content TEXT NOT NULL;
-};
+    text_content TEXT NOT NULL,
+);
 
 COMMIT;
