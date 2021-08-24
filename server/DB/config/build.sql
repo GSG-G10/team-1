@@ -12,19 +12,13 @@ CREATE TABLE users(
     password VARCHAR(100) NOT NULL,
     description TEXT,
     img_profile TEXT, 
-    background_img TEXT
+    img_background TEXT
 );
-
-CREATE TABLE video_user(
-    video_id INT REFERENCES users(id),
-    user_id INT REFERENCES video(id)
-);
-
 
 CREATE TABLE video(
     id SERIAL PRIMARY KEY, 
-    create_by INT REFERENCES users(id),
-    url TEXT NOT NULL UNIQUE,
+    created_by INT REFERENCES users(id),
+    url TEXT NOT NULL,
     description TEXT,
     title TEXT NOT NULL,
     img TEXT,
@@ -32,10 +26,16 @@ CREATE TABLE video(
 );
 
 
+CREATE TABLE video_user(
+    video_id INT REFERENCES users(id),
+    user_id INT REFERENCES video(id)
+);
+
+
 CREATE TABLE review(
     user_id INT REFERENCES users(id),
     video_id INT NOT NULL, 
-    text_content TEXT NOT NULL,
+    text_content TEXT NOT NULL
 );
 
 COMMIT;
