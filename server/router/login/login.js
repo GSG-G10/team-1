@@ -9,7 +9,7 @@ routerLogin.get('/', (req, res)=>{
 
 routerLogin.post('/', (req, res)=>{
     console.log(req.body);
-    res.redirect('/')
+    res.redirect('/home')
 })
 
 
