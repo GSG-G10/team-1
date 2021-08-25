@@ -6,13 +6,13 @@ const emailExists = (email) => {
         values: [email]
     };
 
-    let success = false;
+    // let success = false;
 
-    connection.query(sql)
-        .then(result => success = result.rowCount > 0)
-        .catch(e => console.log(e));
+    // connection.query(sql)
+        // .then(result => success = result.rowCount > 0)
+        // .catch(e => console.log(e));
 
-    return success;
+    return connection.query(sql);
 }
 
 module.exports= emailExists;
