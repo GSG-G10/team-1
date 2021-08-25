@@ -13,7 +13,7 @@ routerLogin.get('/', (req, res)=>{
 routerLogin.post('/', (req, res)=>{
     const {error, value} = loginSchema.validateAsync(req.body)
                             .then(res => res.redirect('/auth'))
-                            .catch(res.status(400).json('<h2>Robot!</h2>'))
+                            .catch(res.status(400).send('<h2>Robot!</h2>'))
     
 })
 
