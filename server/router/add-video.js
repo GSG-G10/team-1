@@ -6,7 +6,7 @@ routerAddVideo.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname,'../../public/home/index.html'))
 })
 
-routerAddVideo.post('/', (req, res)=>{
+routerAddVideo.post('/add-video', (req, res)=>{
     console.log(req.body);
     res.redirect('/login')
 })
