@@ -5,8 +5,8 @@ const routerHome = express.Router()
 
 
 routerHome.get('/', (req, res)=>{
-    const { token } = req.cookies;
-    console.log(token);
+    // const { token } = req.cookies;
+    // console.log(token);
     console.log('1111111111111111');
     // res.sendFile(path.join(__dirname,'../../public/home/index.html'))
 })

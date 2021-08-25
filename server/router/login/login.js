@@ -1,12 +1,14 @@
 const express = require('express')
-const path = require('path')
+const router = require("express").Router();
+const jwt = require("jsonwebtoken");
 const bcrypt = require('bcrypt')
-const { sign, verify } = require("jsonwebtoken");
+const cookieParser = require('cookie-parser')
 const serverValidation = require('./server-validation');
 const emailExists = require('../../DB/query/email-exist')
 require('env2')('./config.env');
 
 const routerLogin = express.Router()
+router.use(cookieParser())
 
 
 routerLogin.post('/', async (req, res)=>{
@@ -18,7 +20,7 @@ routerLogin.post('/', async (req, res)=>{
     const rowsCount =emails.rowCount;
     if(rowsCount > 0){
         const dbPassword = emails.rows[0].password;
-        const userInformation = {
+        const payLoad = {
             username: username,
             email: email,
             logged_in: true,
@@ -26,10 +28,11 @@ routerLogin.post('/', async (req, res)=>{
           };
         
             if(bcrypt.compareSync(password, dbPassword)){
-                const cookie = sign(userInformation, secretBin);
-                res.cookie("token", cookie, { httpOnly: true , secure: true})
-                    .status(200)
-                    .redirect('/home');                   
+                const token = jwt.sign(payLoad, secretBin);
+                res.cookie("token", token, {maxAge: 9999, httpOnly: true , secure: true});
+                res.set(token);
+                res.redirect(`/`);  
+                               
             }
             else{
                 console.log('password is incorrect');
