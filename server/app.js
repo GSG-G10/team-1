@@ -7,6 +7,7 @@ const routerRegister = require('./router/register/register')
 const routerLogin = require('./router/login/login')
 const routerAddVideo = require('./router/add-video')
 const routerProfile = require('./router/profile')
+const routerWatch = require('./router/watch/watch')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,5 +20,6 @@ app.use('/register', routerRegister)
 app.use('/login', routerLogin)
 app.use('/profile', routerProfile)
 app.use('/add-video', routerAddVideo)
+app.use('/watch', routerWatch)
 
 module.exports = app

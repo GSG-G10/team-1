@@ -15,12 +15,12 @@ CREATE TABLE users(
 
 CREATE TABLE video(
     id SERIAL PRIMARY KEY, 
-    created_by INT REFERENCES users(id),
+    created_by VARCHAR(20) NOT NULL,
     url TEXT NOT NULL,
     description TEXT,
     title TEXT NOT NULL,
-    img TEXT,
-    tag TEXT[],
+    img TEXT NOT NULL,
+    tag TEXT NOT NULL,
     created_at timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
