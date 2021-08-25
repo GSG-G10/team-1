@@ -5,12 +5,13 @@ const bcrypt = require('bcrypt')
 const loginSchema = require('./schemaLog')
 const serverValidation = require('./server-validation');
 const emailExists = require('../../DB/query/email-exist')
+const createCookie = require('./authentication')
 
 const routerLogin = express.Router()
 
 
 routerLogin.post('/', async (req, res)=>{
-   const {email, password} = await serverValidation(req.body);
+   const {username, email, password} = await serverValidation(req.body);
     if (email){
     const emails = await emailExists(email);
     const rowsCount =emails.rowCount;
@@ -18,10 +19,13 @@ routerLogin.post('/', async (req, res)=>{
         const dbPassword = emails.rows[0].password;
         
             if(bcrypt.compareSync(password, dbPassword)){
+                res.cookie("data", createCookie(username, email), { httpOnly: true, secure: true });
                 res.redirect('/home')
+
             }
             else{
                 console.log('password is incorrect');
+                res.json({'msg':'incorrect Password'});
             }
     } 
     else{
