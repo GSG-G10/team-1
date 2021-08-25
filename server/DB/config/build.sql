@@ -1,7 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, video , video_user , review CASCADE;
-
+DROP TABLE IF EXISTS users , video , video_user ,review CASCADE;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
