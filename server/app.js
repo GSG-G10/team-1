@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const routerLand = require('./router/land')
-const routerHome = require('./router/home')
+const routerLogout = require('./router/logout')
 const routerRegister = require('./router/register/register')
 const routerLogin = require('./router/login/login')
 const routerAddVideo = require('./router/add-video')
@@ -14,9 +14,9 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, '..', 'public'), { maxAge: '30d' }));
 
 app.use('/', routerLand)
-// app.use('/home', routerHome)
 app.use('/register', routerRegister)
 app.use('/login', routerLogin)
+app.use('/logout', routerLogout)
 app.use('/profile', routerProfile)
 app.use('/add-video', routerAddVideo)
 

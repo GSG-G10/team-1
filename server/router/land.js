@@ -10,7 +10,10 @@ router.use(cookieParser())
 
 routerHome.get('/', (req, res)=>{
     
-    const token = req.headers.cookie.split("=")[1];
+    const token = req.headers.cookie?.split("=")[1];
+    if(!token)
+        return res.sendFile(path.join(__dirname,'../../public/land/index.html'));
+
     const secretBin= process.env.SECRET;
     const decoded = jwt.verify(token, secretBin);
     if(decoded.logged_in) {
