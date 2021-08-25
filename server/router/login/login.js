@@ -1,27 +1,35 @@
 const express = require('express')
 const path = require('path')
-const joi = require('joi');
 const bcrypt = require('bcrypt')
-const loginSchema = require('./schemaLog')
+const { sign, verify } = require("jsonwebtoken");
 const serverValidation = require('./server-validation');
 const emailExists = require('../../DB/query/email-exist')
-const createCookie = require('./authentication')
+require('env2')('./config.env');
 
 const routerLogin = express.Router()
 
 
 routerLogin.post('/', async (req, res)=>{
    const {username, email, password} = await serverValidation(req.body);
+   const secretBin= process.env.SECRET;
+
     if (email){
     const emails = await emailExists(email);
     const rowsCount =emails.rowCount;
     if(rowsCount > 0){
         const dbPassword = emails.rows[0].password;
+        const userInformation = {
+            username: username,
+            email: email,
+            logged_in: true,
+            role: "user"
+          };
         
             if(bcrypt.compareSync(password, dbPassword)){
-                res.cookie("data", createCookie(username, email), { httpOnly: true, secure: true });
-                res.redirect('/home')
-
+                const cookie = sign(userInformation, secretBin);
+                res.cookie("token", cookie, { httpOnly: true , secure: true})
+                    .status(200)
+                    .redirect('/home');                   
             }
             else{
                 console.log('password is incorrect');
