@@ -8,6 +8,9 @@ const express = require('express');
 const bcrypt= require('bcrypt');
 const routerRegister= express.Router();
 
+routerRegister.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname,'../../public/register/index.html'))
+})
 
 routerRegister.post('/', async (req, res) => {
     try{

@@ -112,9 +112,6 @@ btn_add.addEventListener('click', (e)=>{
         }
     }
 
-    
-
-
 if( status.title &&  status.category &&  status.descriptionVideo && status.urlVideo && status.urlImage){
     fetch("/add-video", {
         method: "POST",
@@ -130,11 +127,11 @@ if( status.title &&  status.category &&  status.descriptionVideo && status.urlVi
     .then(response => response.json())
     .then(res => console.log("response", res))
     .catch(err => console.log(err));
+
+    location.assign('/profile')
 }
 
 })
-
-
 })
 
 
