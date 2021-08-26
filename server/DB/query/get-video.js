@@ -5,12 +5,12 @@ const getVideo = (pageCurrnt) => {
   if (pageCurrnt == 0) {
     return connection.query(`
     select * from users
-    join video on users.username = video.created_by OFFSET 0 LIMIT 15;`);
+    join video on users.id = video.created_by OFFSET 0 LIMIT 15;`);
   } else {
     pageCurrnt *= 15;
     return connection.query(`
     select * from users
-    join video on users.username = video.created_by OFFSET ${pageCurrnt} LIMIT 15;`);
+    join video on users.id = video.created_by OFFSET ${pageCurrnt} LIMIT 15;`);
   }
 };
 
