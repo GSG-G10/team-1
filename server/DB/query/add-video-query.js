@@ -1,4 +1,3 @@
-const addVideoSchema = require('../../router/addVideo/VideoSchema');
 const connection = require('../config/connections');
 
 const addVideoQuery = (data) => {
