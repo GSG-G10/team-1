@@ -1,6 +1,6 @@
 
 insert into users (username, email, password, bio, img_profile, img_background) values ( 'jomaa', 'jomaa@gamil.com', 'pass$$Word77', 'hacve a good day>>jomaa', 'https://avatarfiles.alphacoders.com/108/thumb-1920-108886.gif', 'https://www.vanguardngr.com/wp-content/uploads/2020/03/Tanjiro__Demon_Slayer_.0-1024x683.png');
-insert into users (username, email, password, bio, img_profile, img_background) values ( 'nour', 'nour@gamil.com', 'pass$$Word77', 'hacve a good day>>nour', 'https://avatarfiles.alphacoders.com/827/thumb-1920-82734.jpg', 'https://assets3.thrillist.com/v1/image/2855068/1200x630/flatten;crop_down;jpeg_quality=70');
+insert into users (username, email, password, bio, img_profile, img_background) values ( 'nour', 'nouradwi12@gamil.com', 'sasa56/*', 'hacve a good day>>nour', 'https://avatarfiles.alphacoders.com/827/thumb-1920-82734.jpg', 'https://assets3.thrillist.com/v1/image/2855068/1200x630/flatten;crop_down;jpeg_quality=70');
 insert into users (username, email, password, bio, img_profile, img_background) values ( 'emaan', 'emaan@gamil.com', 'pass$$Word77', 'hacve a good day>>emaan', 'https://avatarfiles.alphacoders.com/832/thumb-1920-83296.png', 'https://www.fortressofsolitude.co.za/wp-content/uploads/2019/05/The-15-Most-Powerful-Anime-Characters-Of-All-Time-scaled.jpg');
 insert into users (username, email, password, bio, img_profile, img_background) values ( 'asmaa', 'asmaa@gamil.com', 'pass$$Word77', 'hacve a good day>>asmaa', 'https://avatarfiles.alphacoders.com/699/thumb-1920-69905.png', 'https://bloody-disgusting.com/wp-content/uploads/2020/10/high-rise-invasion-trailer.png');
 insert into users (username, email, password, bio, img_profile, img_background) values ( 'ahmed', 'ahmed@gamil.com', 'pass$$Word77', 'hacve a good day>>ahmed', 'https://avatarfiles.alphacoders.com/873/thumb-1920-87367.png', 'https://cdn.vox-cdn.com/thumbor/T-CdVKEr15QAbS5glLJJynEZcMw=/0x87:1920x1047/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/22154714/jbareham_201207_ecl1053_besof2020_anime.jpg');
@@ -16,6 +16,3 @@ insert into video (created_by, url, description, title, img, tag) values ('mosta
 insert into video (created_by, url, description, title, img, tag) values ('mostafa', 'https://www.youtube.com/embed/OmJ-4B-mS-Y', 'why we use this give us like♥', 'how to go out earth', 'https://miro.medium.com/max/1400/1*L76A5gL6176UbMgn7q4Ybg.jpeg', 'mathematics');
 
 
--- insert into review (user_id, video_id, text_content) values ();
--- eduo=# \i 'E:\\GSG\\projects\\team-1\\server\\DB\\config\\build.sql';
--- eduo=# \i 'E:\\GSG\\projects\\team-1\\server\\DB\\config\\insert.sql';

@@ -10,11 +10,9 @@ require('env2')('./config.env');
 const routerLogin = express.Router()
 router.use(cookieParser())
 
-
 routerLogin.post('/', async (req, res)=>{
    const {username, email, password} = await serverValidation(req.body);
    const secretBin= process.env.SECRET;
-
     if (email){
     const emails = await emailExists(email);
     const rowsCount =emails.rowCount;
@@ -29,7 +27,7 @@ routerLogin.post('/', async (req, res)=>{
         
             if(bcrypt.compareSync(password, dbPassword)){
                 const token = jwt.sign(payLoad, secretBin);
-                res.cookie("token", token, {maxAge: 9999, httpOnly: true , secure: true});
+                res.cookie("token", token, {maxAge: 999999, httpOnly: true , secure: true});
                 res.set(token);
                 res.redirect(`/`);  
             }
