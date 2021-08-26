@@ -77,16 +77,19 @@
     
     
     .about_us{
-    font-size: 2.5rem;
-    line-height: 70px;
+    font-size: 1.5rem;
     }
     
+
+    .about_us h2{
+            font-size: 2.5rem;
+    line-height: 100px;
+}
     
     .btn_register a{
     margin-top: 50px;
     width: 220px;
     height: 50px;
-    
     background-color: rgb(255, 255, 255);
     text-decoration: none;
     color: #000;
@@ -114,4 +117,8 @@
         left: 0;
         display: flex;
         justify-content: space-between;
+    }
+
+    main svg{
+        height: 200px;
     }

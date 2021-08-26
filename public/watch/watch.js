@@ -1,4 +1,3 @@
-
 let idWatch = location.pathname
 let id = idWatch.split('/')[2]
 
@@ -29,10 +28,5 @@ main.innerHTML = `
         <div class="descrption">
         <span>${data[0].description}</span>
     </div>
-
-
 `
 }
-
-
-

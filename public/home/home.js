@@ -21,7 +21,6 @@ function fetchGetData(page){
 
     })
     .catch(console.log)
-
 }
 
 
