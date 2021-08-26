@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users, video , video_user , review CASCADE;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
-    username VARCHAR(20) NOT NULL,
+    username VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL ,
     password VARCHAR(100) NOT NULL,
     bio TEXT,
@@ -15,7 +15,7 @@ CREATE TABLE users(
 
 CREATE TABLE video(
     id SERIAL PRIMARY KEY, 
-    created_by VARCHAR(20) NOT NULL,
+    created_by INT REFERENCES users(id),
     url TEXT NOT NULL,
     description TEXT,
     title TEXT NOT NULL,
