@@ -3,18 +3,31 @@ const myVideos = document.querySelector('.my_videos')
 const mySaved = document.querySelector('.my_Saved')
 const addVideo = document.querySelector('.add_video')
 
-sendData('myVideos')
+fetch(`/profile/myvideo`)
+.then(data =>{return data.json()})
+.then(data=>{
+    console.log(data);
+    sendData(data)
+})
+.catch(console.log)
+
 
 myVideos.addEventListener('click', ()=>{
     removeChild(main)
-    sendData('myVideos')
+    
+fetch(`/profile/myvideo`)
+.then(data =>{return data.json()})
+.then(data=>{
+    console.log(data);
+    sendData(data)
+})
+.catch(console.log)
+
 
 })
 
 mySaved.addEventListener('click', ()=>{
     removeChild(main)
-    sendData('mySaved')
-
 })
 
 addVideo.addEventListener('click', ()=>{
@@ -112,6 +125,9 @@ btn_add.addEventListener('click', (e)=>{
         }
     }
 
+    
+
+
 if( status.title &&  status.category &&  status.descriptionVideo && status.urlVideo && status.urlImage){
     fetch("/add-video", {
         method: "POST",
@@ -127,44 +143,42 @@ if( status.title &&  status.category &&  status.descriptionVideo && status.urlVi
     .then(response => response.json())
     .then(res => console.log("response", res))
     .catch(err => console.log(err));
-
-    location.assign('/profile')
+    location.assign('/home')
 }
 
 })
+
+
 })
 
-
-
-
-function sendData(name){
-    for (let i = 0; i < 25; i++) {
+function sendData(data){
+    for (let i = 0; i < data.length; i++) {
         main.innerHTML += `
-    <div class="card_video_" data-id="${i}">
+<a class="linked_card_all" href="/watch/${data[i].id}">
+    <div class="card_video_" data-id="${data[i].id}">
         <div class="bacg_img_video">
-            <img src="https://assets3.thrillist.com/v1/image/2855068/1200x630/flatten;crop_down;jpeg_quality=70">
+                <img src="${data[i].img}">
         </div>
         <div class="title_video" dir="rtl">
-            <span> الحياة أمل 🎵 اغنية عربية رائعة ومؤثرة | AMV | 🎵 | IZZ ft. Emy Hetari || لا تفوتك</span>
+            <span>${data[i].title}</span>
         </div>
         <div class="info_Chanal_video">
             <div class="img_chanal_video">
-                <img src="https://animeinterface.com/storage/images/1628237151_623aa8f9933ee9a286871bf6e0782538.jpg">
+                <img src="${data[i].img_profile}">
             </div>
             <div class="title_chanal_name">
-                <span>${name}</span>
-                <span class="date_post_video">before 3 day</span>
+                <span>${data[i].created_by}</span>
+                <span class="date_post_video">${new Date(data[i].created_at).getDate()}, ${new Date(data[i].created_at).getMonth() +1 }, ${new Date(data[i].created_at).getFullYear()}</span>
             </div>
             <div class="counter_view_video">
-                <span>222.4k</span>
+                <span>${(Math.floor(22.4 * (data[i].id *1.2)))}k view</span>
             </div>
         </div>
     </div>
-        
+</a>
         `
+        }
 }
-}
-
 
 
 // for remove all content main

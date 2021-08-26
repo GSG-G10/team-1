@@ -1,3 +1,4 @@
+
 const connection = require('../config/connections');
 
 const emailExists = (email) => {

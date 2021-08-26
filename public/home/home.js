@@ -13,7 +13,7 @@ window.addEventListener('scroll',()=>{
 })
 
 function fetchGetData(page){
-    fetch(`/home/getvideo/:${page}`)
+    fetch(`/getvideo/:${page}`)
     .then(data =>{return data.json()})
     .then(data=>{
         console.log(data);
@@ -21,7 +21,6 @@ function fetchGetData(page){
 
     })
     .catch(console.log)
-
 }
 
 

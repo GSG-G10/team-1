@@ -5,10 +5,10 @@ const getWatch = require('../../DB/query/get-watch')
 const bodyParser = require('body-parser');
 routerWatch.use(bodyParser.json());
 
+
 routerWatch.get('/:id', (req, res)=>{
     res.sendFile(path.join(__dirname,'../../../public/watch/index.html'))
 })
-
 
 routerWatch.get('/data/:id', (req, res)=>{
     console.log(req.params.id);

@@ -1,6 +1,5 @@
+  
 const joi = require('joi');
-
-
 const regSchema= joi.object({
     full_name: joi.string().alphanum().min(3).required(),
     email: joi.string().email().required(),
