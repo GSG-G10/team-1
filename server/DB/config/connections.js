@@ -21,8 +21,3 @@ const options = {
 
 
 module.exports= new Pool(options);
-
-
-
-
-

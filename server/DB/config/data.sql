@@ -1,3 +1,0 @@
-insert into users (username, email, password, img_profile, img_background) values ('Sada', 'nouradwi12@gmail.com', '$2b$10$.2fD9iRad5xIndcCARawXulxr39FBqbQNMz4.FWYIaBXfNkZIIKum', 'http://dummyimage.com/220x100.png/ff4444/ffffff', 'http://dummyimage.com/196x100.png/5fa2dd/ffffff');
-insert into users (username, email, password, img_profile, img_background) values ('Bobbee', 'bbrettor1@bizjournals.com', 'dZcPSrxT', 'http://dummyimage.com/191x100.png/5fa2dd/ffffff', 'http://dummyimage.com/155x100.png/dddddd/000000');
-insert into users (username, email, password, img_profile, img_background) values ('Neill', 'nlabuschagne2@unesco.org', 'aLZIvm', 'http://dummyimage.com/186x100.png/5fa2dd/ffffff', 'http://dummyimage.com/157x100.png/dddddd/000000');
