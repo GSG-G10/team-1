@@ -34,7 +34,6 @@ routerLogin.post('/', async (req, res)=>{
                 res.redirect(`/`);  
             }
             else{
-                console.log('password is incorrect');
                 res.json({'msg':'incorrect Password'});
             }
     } 
