@@ -36,10 +36,10 @@ routerLogin.post("/", async (req, res) => {
         res.json({ msg: "incorrect Password" });
       }
     } else {
-      console.log("you have to sign up first");
+      res.json({ msg: "you have to sign up first" });
     }
   } else {
-    console.log("you are not allowd anymore!");
+    res.json({ msg: "you are not allowd anymore!" });
   }
 });
 

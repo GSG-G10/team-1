@@ -1,20 +1,25 @@
-const { pool, Pool } = require("pg");
-require("env2")("./config.env");
+require('env2')('./config.env');
+const { Pool } = require('pg');
 
-const DB_URL = process.env.DB_URL;
-if (!DB_URL) {
-  console.log("No Databse URL!!!");
-  return;
+const { DATABASE_URL, DB_URL } = process.env;
+let dburl = '';
+
+switch (NODE_ENV) {
+  case 'production':
+    dburl = DATABASE_URL;
+    break;
+  case 'development':
+    dburl = DB_URL;
+    break;
+  default:
+    throw new Error('No Database is founded !');
 }
-const params = new URL(DB_URL);
+
 const options = {
-  host: params.hostname,
-  port: params.port,
-  database: params.pathname.split("/")[1],
-  max: process.env.DB_MAX_CONNECTIONS || 2,
-  user: params.username,
-  password: params.password,
-  ssl: params.hostname !== "localhost",
+  connectionString: dburl,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 };
 
 module.exports = new Pool(options);

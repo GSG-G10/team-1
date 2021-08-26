@@ -3,7 +3,7 @@ const connection = require("../config/connections");
 
 const addVideoQuery = (data) => {
   const dataArray = [
-    "jomaa",
+    "6",
     data.urlVideo,
     data.descriptionVideo,
     data.title,
