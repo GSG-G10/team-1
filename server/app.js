@@ -1,3 +1,4 @@
+
 const express = require('express')
 const path = require('path')
 const app = express()
@@ -16,10 +17,10 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, '..', 'public'), { maxAge: '30d' }));
 
 app.use('/', routerLand)
-app.use('/home', routerHome)
 app.use('/register', routerRegister)
 app.use('/logout', routerLogout)
 app.use('/login', routerLogin)
+app.use('/logout', routerLogout)
 app.use('/profile', routerProfile)
 app.use('/add-video', routerAddVideo)
 app.use('/watch', routerWatch)
