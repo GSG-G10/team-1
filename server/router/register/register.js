@@ -32,13 +32,9 @@ routerRegister.post('/', async (req, res) => {
          hashPass,
     );
 
-    const token = jwt.sign({usernme: username, password: password}, 'eman');
      res
-    .cookie("access_token", token, {
-      httpOnly: true,
-    })
     .status(200)
-    .redirect('/');
+    .redirect('/login');
     }
     catch(err){
         console.log(err);
