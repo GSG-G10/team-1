@@ -2,13 +2,13 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const jwt = require("jsonwebtoken");
-const routerHome = express.Router()
+const routerLand = express.Router()
 require('env2')('./config.env');
 const router = require("express").Router();
 
 router.use(cookieParser())
 
-routerHome.get('/', (req, res)=>{
+routerLand.get('/', (req, res)=>{
     
     const token = req.headers.cookie?.split("=")[1];
     if(!token)
@@ -25,4 +25,4 @@ routerHome.get('/', (req, res)=>{
 })
 
 
-module.exports = routerHome
+module.exports = routerLand
