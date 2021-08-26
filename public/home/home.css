@@ -181,7 +181,7 @@ nav {
   /* background-color: sandybrown; */
 }
 
-.bacg_img_video a{
+.bacg_img_video a {
   width: 100%;
   height: 150px;
 }
@@ -251,7 +251,9 @@ nav {
   color: rgb(116, 110, 110);
 }
 
-.linked_card_all{
+.linked_card_all {
   text-decoration: none;
   color: #383838;
 }
+
+/* b */
